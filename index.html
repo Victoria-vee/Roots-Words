@@ -1,88 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roots & Words</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="signup.css" />
+  </head>
+
+  <body>
     <header>
-        <div class="left">Roots & Words</div>
-        <div class="right" >
-            <a href="Signup.html"class="signup">Get Started</a>
-            <a href=""class="signin">I already have an account</a>
+      <div class="left">Roots & Words</div>
+      <div class="right">
+        <button id="signup">Get Started</button>
+        <div id="signup-popup">
+          <div class="container">
+            <span id="close">&times;</span>
+            <div class="popup-header">
+              <p class="left">Roots & Words</p>
+              <a class="right" href="#signin">Already Have an account?</a>
+            </div>
+            <div class="hr"></div>
+            <form action="">
+              <div class="input-group">
+                <label for="name"></label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Name"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <label for="email"></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="E-mail"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <label for="dob"></label>
+                <input
+                  type="date"
+                  id="dob"
+                  name="dob"
+                  placeholder="Date of Birth"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <label for="password"></label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <label for="confirmpassword"></label>
+                <input
+                  type="password"
+                  id="confirmpassword"
+                  name="password"
+                  placeholder="Confirm Password"
+                  required
+                />
+              </div>
+              <label for="show"
+                ><input type="checkbox" id="show" /> Show Password</label
+              >
+              <button type="submit" class="formsubmit" href="lessons.html">Sign Up</button>
+            </form>
+          </div>
         </div>
+        <button id="signin">I already have an account</button>
+        <div id="signin-popup">
+          <div class="container" id="signin-container">
+            <span id="close-signin">&times;</span>
+            <div class="popup-header">
+              <p class="left">Roots & Words</p>
+              <a class="right" href="#signup ">Don't have an account?</a>
+            </div>
+            <div class="hr"></div>
+            <form action="">
+              <div class="input-group">
+                <label for="email"></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="E-mail"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <label for="password"></label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <label for="show"
+                ><input type="checkbox" id="show" /> Show Password</label
+              >
+              <button type="submit" class="formsubmit" href="lessons.html">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </header>
-    <div class="hr"></div>
     <section>
-        <div class="about">
-            <p>
-                Roots & Words is a website aimed at teaching nigerian languages to all who want to learn. Whether you're a Nigerian in diaspora, a Nigerian in Nigeria, or a lover of all things Nigerian this website is for you. 
-            </p>
-        </div>
-        <div class="languages">
-            <p>Igbo</p>
-            <p>Efik</p>
-            <p>Yoruba</p>
-            <p>Hausa</p>
-            <p>Tiv</p>
-            <p>Ijaw</p>
-            <p>Nupe</p>
-            <p>Urhobo</p>
-            <p>Igala</p>
-            <p>Ibibio</p>
-            <p>Itsekiri</p>
-            <p>Anaang</p>
-            <p>...And more</p>
-        </div>  
+      <div class="about">
+        <p>
+          Roots & Words is a website aimed at teaching nigerian languages to all
+          who want to learn. Whether you're a Nigerian in diaspora, a Nigerian
+          in Nigeria, or a lover of all things Nigerian this website is for you.
+        </p>
+      </div>
+      <div class="languages">
+        <p>Igbo</p>
+        <p>Efik</p>
+        <p>Yoruba</p>
+        <p>Hausa</p>
+        <p>Tiv</p>
+        <p>Ijaw</p>
+        <p>Nupe</p>
+        <p>Urhobo</p>
+        <p>Igala</p>
+        <p>Ibibio</p>
+        <p>Itsekiri</p>
+        <p>Anaang</p>
+        <p>...And more</p>
+      </div>
     </section>
     <div class="tagline">
-            <p>Become an <i>Expert!</i> One lesson at a time.</p>
+      <p>Become an <i>Expert!</i> One lesson at a time.</p>
     </div>
     <footer>
-        <div class="topfooter">
-            <div class="leftfooter">
-                <div class="socialmedia">
-                    <h3>Follow us</h3>
-                    <a href="">WhatsApp</a>
-                    <a href="">X</a>
-                    <a href="">Instagram</a>
-                    <a href="">Facebook</a>
-                </div>
-            </div>
-
-            <div class="midfooter">
-                <div class="newsletter">
-                    <h3>Recieve Language Tips</h3>
-                    <form action="">
-                        <div class="input">
-                            <label for="name"></label>
-                            <input type="text" name="name" id="name" placeholder="Name">
-                            <label for="email"></label>
-                            <input type="email" name="email" id="email" placeholder="Email">
-                        </div>
-                        <button type="submit" name="submit">Submit</button>
-                    </form>
-                </div>
-               
-            </div>
-
-            <div class="rightfooter">
-                <div class="contact">
-                   <h3>Contact Us</h3>
-                    <p>Email:<a href="">essienvictoria2020@gmail.com</a></p>
-                    <p>Location: <a href="">Enugu, Nigeria</a></p>
-               </div>
-                
-            </div>
+      <div class="topfooter">
+        <div class="leftfooter">
+          <div class="socialmedia">
+            <h3>Follow us</h3>
+            <a href="">WhatsApp</a>
+            <a href="">X</a>
+            <a href="">Instagram</a>
+            <a href="">Facebook</a>
+          </div>
         </div>
 
-        <div class="hr"></div>
-
-        <div class="credits">
-            <p>All rights reserved @ Patcheloper Tech</p>
+        <div class="midfooter">
+          <div class="newsletter">
+            <h3>Recieve Language Tips</h3>
+            <form action="">
+              <div class="input">
+                <label for="name"></label>
+                <input type="text" name="name" id="name" placeholder="Name" />
+                <label for="email"></label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                />
+              </div>
+              <div class="submit">
+                <button type="submit" name="submit">Submit</button>
+              </div>
+            </form>
+          </div>
         </div>
+
+        <div class="rightfooter">
+          <div class="contact">
+            <h3>Contact Us</h3>
+            <p>Email:<a href="">essienvictoria2020@gmail.com</a></p>
+            <p>Location: <a href="">Enugu, Nigeria</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="credits">
+        <p>All rights reserved @ Patcheloper Tech</p>
+      </div>
     </footer>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
