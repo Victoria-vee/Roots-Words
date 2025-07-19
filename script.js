@@ -16,7 +16,7 @@ const signup = document.getElementById('signup');
 const signin = document.getElementById('signin');
 const signuppopup = document.getElementById('signup-popup');
 const signinpopup = document.getElementById('signin-popup');
-
+const signupsubmit = document.getElementById('signupsubmit');
 signup.addEventListener("click",()=>{
     signuppopup.style.display="block";
 });
@@ -33,3 +33,6 @@ closesignin.onclick=()=>{
     signinpopup.style.display = "none";
 };
 
+signupsubmit.onclick=()=>{
+        location.href = "lessons.html"; // Redirect to home page
+}
