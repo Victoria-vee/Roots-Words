@@ -6,22 +6,37 @@
     <title>Roots & Words</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="signup.css" />
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Kablammo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
-
+<!-- Start of Project -->
   <body>
+    <!-- Nav bar containing the logo and signup and sign in -->
     <header>
+      <!-- Left Part(logo) -->
       <div class="left">Roots & Words</div>
+      <!-- Right Part(Signin and Signup) -->
       <div class="right">
-        <button id="signup">Get Started</button>
+        <!-- Get started pop up -->
+         <!-- The button -->
+        <button id="signup" class="signup">Get Started</button>
+        <!-- The popup -->
         <div id="signup-popup">
           <div class="container">
+            <!-- Close Button -->
             <span id="close">&times;</span>
+            <!-- Popup Navbar -->
             <div class="popup-header">
               <p class="left">Roots & Words</p>
-              <a class="right" href="#signin">Already Have an account?</a>
+              <a class="right signin" href="#signin-popup">Already Have an account?</a>
             </div>
             <div class="hr"></div>
+            <!-- Form for Sign Up -->
             <form action="">
+              <!-- Name -->
               <div class="input-group">
                 <label for="name"></label>
                 <input
@@ -32,6 +47,7 @@
                   required
                 />
               </div>
+              <!-- Email -->
               <div class="input-group">
                 <label for="email"></label>
                 <input
@@ -42,6 +58,7 @@
                   required
                 />
               </div>
+              <!-- Date of Birth -->
               <div class="input-group">
                 <label for="dob"></label>
                 <input
@@ -52,6 +69,7 @@
                   required
                 />
               </div>
+              <!-- Password and Confirm Password -->
               <div class="input-group">
                 <label for="password"></label>
                 <input
@@ -72,23 +90,32 @@
                   required
                 />
               </div>
-              <label for="show"
-                ><input type="checkbox" id="show" /> Show Password</label
-              >
-              <button type="submit" class="formsubmit" href="lessons.html" id="signupsubmit">Sign Up</button>
+              <!-- Show Password Checkbox -->
+              <label for="show">
+                <input type="checkbox" id="show"/> Show Password</label>
+              <!-- Submit Button -->
+              <button type="submit" class="signup" href="lessons.html" id="signupsubmit">Sign Up</button>
             </form>
           </div>
+          <!-- End of Popup -->
         </div>
-        <button id="signin">I already have an account</button>
+        <!-- Sign In Popup -->
+        <!-- The button -->
+        <button id="signin" class="signin">I already have an account</button>
+        <!-- The popup -->
         <div id="signin-popup">
           <div class="container" id="signin-container">
+            <!-- Close Button -->
             <span id="close-signin">&times;</span>
+            <!-- Popup Navbar -->
             <div class="popup-header">
               <p class="left">Roots & Words</p>
-              <a class="right" href="#signup ">Don't have an account?</a>
+              <a class="right signup" href="#signup-popup" id="signuplink">Don't have an account?</a>
             </div>
             <div class="hr"></div>
+            <!-- Form for Sign In -->
             <form action="">
+              <!-- Email -->
               <div class="input-group">
                 <label for="email"></label>
                 <input
@@ -99,6 +126,7 @@
                   required
                 />
               </div>
+              <!-- Password -->
               <div class="input-group">
                 <label for="password"></label>
                 <input
@@ -109,16 +137,21 @@
                   required
                 />
               </div>
-              <label for="show"
-                ><input type="checkbox" id="show" /> Show Password</label
-              >
-              <button type="submit" class="formsubmit" href="lessons.html">Sign Up</button>
+              <!-- Show Password Checkbox -->
+              <label for="show">
+                <input type="checkbox" id="show" /> Show Password</label>
+              <!-- Submit Button -->
+              <button type="submit" class="signin" href="lessons.html">Sign In</button>
             </form>
           </div>
         </div>
+        <!-- End of Sign In Popup -->
       </div>
+      <!-- End of Navbar -->
     </header>
+    <!-- First sectiom -->
     <section>
+      <!-- Section Text -->
       <div class="about">
         <p>
           Roots & Words is a website aimed at teaching nigerian languages to all
@@ -126,25 +159,70 @@
           in Nigeria, or a lover of all things Nigerian this website is for you.
         </p>
       </div>
+      <!-- Section Images -->
       <div class="languages">
-        <p>Igbo</p>
-        <p>Efik</p>
-        <p>Yoruba</p>
-        <p>Hausa</p>
-        <p>Tiv</p>
-        <p>Ijaw</p>
-        <p>Nupe</p>
-        <p>Urhobo</p>
-        <p>Igala</p>
-        <p>Ibibio</p>
-        <p>Itsekiri</p>
-        <p>Anaang</p>
-        <p>...And more</p>
+        <img src="Humaaans - 3 Characters.png" alt="3 people talking">
       </div>
+      <!-- End of Section -->
     </section>
     <div class="tagline">
       <p>Become an <i>Expert!</i> One lesson at a time.</p>
+      <p><i>With our amazing features to make learning easy and fun</i></p>
     </div>
+    <!-- features -->
+    <div class="features">
+      <!-- Feature 1 -->
+      <div class="feature" id="feature1" data-aos="fade-right" data-aos-delay="500" data-aos-duration="2000" data-aos-mirror="true">
+        <div class="left">
+          <img src="undraw_correct-answer_vjt7.svg" alt="Feature 1" />
+        </div>
+        <div class="right">
+          <h3>Interactive Lessons</h3>
+          <p>Engaging lessons that make learning fun and effective.</p>
+        </div>
+      </div>
+      <!-- Feature 2 -->
+      <div class="feature" id="feature2" data-aos="fade-left" data-aos-delay="500" data-aos-duration="2000" data-aos-mirror="true">
+        <div class="left">
+          <img src="undraw_completion-progress_o56q.svg" alt="Feature 2" />
+        </div>
+        <div class="right">
+          <h3>Progress Tracking</h3>
+          <p>Track your learning progress and stay motivated.</p>
+        </div>
+      </div>
+      <!-- Feature 3 -->
+      <div class="feature" id="feature3" data-aos="fade-right" data-aos-delay="500" data-aos-duration="2000" data-aos-mirror="true">
+        <div class="left">
+          <img src="undraw_share-opinion_84l8.svg" alt="Feature 3" />
+        </div>
+        <div class="right">  
+          <h3>Community Support</h3>
+          <p>Join a community of learners and get support from peers.</p>
+        </div>
+      </div>
+      <!-- Feature 4 -->
+      <div class="feature" id="feature4" data-aos="fade-left" data-aos-delay="500" data-aos-duration="2000" data-aos-mirror="true">
+        <div class="left">
+          <img src="undraw_video-tutorial_lgts.svg" alt="Feature 4" />
+        </div>
+        <div class="right">
+          <h3>Expert Guidance</h3>
+          <p>Learn from experienced instructors and language experts.</p>
+        </div>
+      </div>
+      <!-- Feature 5 -->
+      <div class="feature" id="feature5" data-aos="fade-right" data-aos-delay="500" data-aos-duration="2000" data-aos-mirror="true">
+        <div class="left">
+          <img src="undraw_my-app_15n4 (1).svg" alt="Feature 5" />
+        </div>
+        <div class="right">
+          <h3>Mobile Friendly</h3>
+          <p>Access lessons anytime, anywhere on your mobile device.</p>
+        </div>
+      </div>
+    </div>
+
     <footer>
       <div class="topfooter">
         <div class="leftfooter">
@@ -195,5 +273,10 @@
       </div>
     </footer>
     <script src="script.js"></script>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   </body>
 </html>
+    
