@@ -1,4 +1,4 @@
-#signup-popup,#signin-popup{
+#signup-popup,#signin-popup,#signup-popup2{
     display: none;
     position:fixed;
     top:0px;
@@ -68,7 +68,7 @@ form{
     flex:1;
 }
 
-#close,#close-signin{
+#close,#close-signin,#close2{
     position:fixed;
     top:0;
     left:10px;
@@ -76,7 +76,7 @@ form{
     color: aliceblue;
 }
 
-#close:hover,#close-signin:hover{
+#close:hover,#close-signin:hover,#close2:hover{
     color: red;
     cursor: pointer;
 }

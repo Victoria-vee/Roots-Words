@@ -27,7 +27,7 @@
         <div id="signup-popup">
           <div class="container">
             <!-- Close Button -->
-            <span id="close">&times;</span>
+            <span id="close" class="close">&times;</span>
             <!-- Popup Navbar -->
             <div class="popup-header">
               <p class="left">Roots & Words</p>
@@ -222,20 +222,104 @@
         </div>
       </div>
     </div>
-
+    <div class="tagline2">
+      <p>Wanna Start Learning... <button id="signup2" class="signup">Sign Up</button></p>
+              <!-- The popup -->
+        <div id="signup-popup">
+          <div class="container">
+            <!-- Close Button -->
+            <span id="close" class="close">&times;</span>
+            <!-- Popup Navbar -->
+            <div class="popup-header">
+              <p class="left">Roots & Words</p>
+              <a class="right signin" href="#signin-popup">Already Have an account?</a>
+            </div>
+            <div class="hr"></div>
+            <!-- Form for Sign Up -->
+            <form action="">
+              <!-- Name -->
+              <div class="input-group">
+                <label for="name"></label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Name"
+                  required
+                />
+              </div>
+              <!-- Email -->
+              <div class="input-group">
+                <label for="email"></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="E-mail"
+                  required
+                />
+              </div>
+              <!-- Date of Birth -->
+              <div class="input-group">
+                <label for="dob"></label>
+                <input
+                  type="date"
+                  id="dob"
+                  name="dob"
+                  placeholder="Date of Birth"
+                  required
+                />
+              </div>
+              <!-- Password and Confirm Password -->
+              <div class="input-group">
+                <label for="password"></label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <label for="confirmpassword"></label>
+                <input
+                  type="password"
+                  id="confirmpassword"
+                  name="password"
+                  placeholder="Confirm Password"
+                  required
+                />
+              </div>
+              <!-- Show Password Checkbox -->
+              <label for="show">
+                <input type="checkbox" id="show"/> Show Password</label>
+              <!-- Submit Button -->
+              <button type="submit" class="signup" href="lessons.html" id="signupsubmit">Sign Up</button>
+            </form>
+          </div>
+          <!-- End of Popup -->
+    </div>
     <footer>
       <div class="topfooter">
         <div class="leftfooter">
           <div class="socialmedia">
-            <h3>Follow us</h3>
+            <h3>Connect with us on:</h3>
             <a href="">WhatsApp</a>
             <a href="">X</a>
             <a href="">Instagram</a>
             <a href="">Facebook</a>
           </div>
         </div>
-
-        <div class="midfooter">
+        <div class="rightfooter">
+          <div class="contact">
+            <h3>Contact Us</h3>
+            <p>Email:<a href="">essienvictoria2020@gmail.com</a></p>
+            <p>Location: <a href="">Enugu, Nigeria</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="midfooter">
           <div class="newsletter">
             <h3>Recieve Language Tips</h3>
             <form action="">
@@ -256,16 +340,6 @@
             </form>
           </div>
         </div>
-
-        <div class="rightfooter">
-          <div class="contact">
-            <h3>Contact Us</h3>
-            <p>Email:<a href="">essienvictoria2020@gmail.com</a></p>
-            <p>Location: <a href="">Enugu, Nigeria</a></p>
-          </div>
-        </div>
-      </div>
-
       <div class="hr"></div>
 
       <div class="credits">
