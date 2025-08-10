@@ -161,7 +161,7 @@ section{
     box-shadow: 3px 3px blur;
 }
 
-.tagline,.tagline2{
+.tagline{
     font-size: 30px;
     font-family: exo;
     font-weight: 600;
@@ -228,71 +228,77 @@ section{
     background-image: linear-gradient(to bottom right, rgba(230, 57, 70, 0.8), rgba(255, 248, 225, 0.5));
 }
 
-.tagline2 p{
+
+.tagline2>p{
     margin: 100px 0;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
 }
 
 footer{
-    background-color: var(--coral);
-    padding:25px;
+      background-image: linear-gradient(to bottom right, var(--coral), #ffe4b5);
     font-family: exo;
     font-size: 19px;
-    margin:0;
+    padding:20px;
 }
 
 h3{
-    font-size: 22px;
+    font-size: 30px;
 }
 
 .topfooter{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap:10px;
-    padding:20px;
+    
 }
 
 .contact{
     display: flex;
     flex-direction: column;
-    justify-content: left;
     gap:15px;
 }
 
-
-
-.rightfooter{
+.socialmedia{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap:15px;
 }
+
  
-.newsletter{
+ .newsletter{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     gap:15px;
+    margin-top:30px;
 }
 
 form{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items:center;
 }
 
 .input{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    
+    align-items: center;
 }
-
 input{
     padding:10px;
     border-radius: 4px;
     margin-right: 15px;
 }
+
 .submit{
     display: flex;
     justify-content: center;  
@@ -304,20 +310,13 @@ input{
     background-color: burlywood;
 }
 
-.socialmedia{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap:15px;
-}
-
 a{
     text-decoration: none;
 }
 
 .hr{
     border: 1px solid grey;
-    margin: 0px 40px;
+    margin:40px;
 }
 .credits{
     text-align: center;
