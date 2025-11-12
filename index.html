@@ -7,18 +7,15 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="signup.css" />
     <link rel="stylesheet" href="responsive.css">
-    <style>
-@import url('https://fonts.googleapis.com/css2?family=Kablammo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
-</style>
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://kit.fontawesome.com/5be89bdbaf.js" crossorigin="anonymous"></script>
   </head>
 <!-- Start of Project -->
   <body>
     <!-- Nav bar containing the logo and signup and sign in -->
     <header>
       <!-- Left Part(logo) -->
-      <div class="left">Roots & Words</div>
+      <div class="left"><span class="naija">Naija</span><span class="tongues">Tongues</span></div>
       <!-- Right Part(Signin and Signup) -->
       <div class="right">
         <!-- Get started pop up -->
@@ -31,8 +28,8 @@
             <span id="close" class="close">&times;</span>
             <!-- Popup Navbar -->
             <div class="popup-header">
-              <p class="left">Roots & Words</p>
-              <a class="right signin" href="#signin-popup">Already Have an account?</a>
+              <div class="left1"><span class="naija">Naija</span><span class="tongues">Tongues</span></div>
+              <a class="right1 signin" href="#signin-popup">Already Have an account?</a>
             </div>
             <div class="hr"></div>
             <!-- Form for Sign Up -->
@@ -110,8 +107,8 @@
             <span id="close-signin">&times;</span>
             <!-- Popup Navbar -->
             <div class="popup-header">
-              <p class="left">Roots & Words</p>
-              <a class="right signup" href="#signup-popup" id="signuplink">Don't have an account?</a>
+              <p class="left1"><span class="naija">Naija</span><span class="tongues">Tongues</span></p>
+              <a class="right1 signup" href="#signup-popup" id="signuplink">Don't have an account?</a>
             </div>
             <div class="hr"></div>
             <!-- Form for Sign In -->
@@ -142,7 +139,7 @@
               <label for="show">
                 <input type="checkbox" id="show" /> Show Password</label>
               <!-- Submit Button -->
-              <button type="submit" class="signin" href="lessons.html">Sign In</button>
+              <button type="submit" class="signin">Sign In</button>
             </form>
           </div>
         </div>
@@ -155,9 +152,9 @@
       <!-- Section Text -->
       <div class="about">
         <p>
-          Roots & Words is a website aimed at teaching nigerian languages to all
+          NaijaTongues is a website aimed at teaching Nigerian languages to all
           who want to learn. Whether you're a Nigerian in diaspora, a Nigerian
-          in Nigeria, or a lover of all things Nigerian this website is for you.
+          in Nigeria, or a lover of all things Nigerian this website is for you. Learn common languages and tit and bits about their culture.
         </p>
       </div>
       <!-- Section Images -->
@@ -173,7 +170,7 @@
     <!-- features -->
     <div class="features">
       <!-- Feature 1 -->
-      <div class="feature" id="feature1" data-aos="fade-right" data-aos-delay="500" data-aos-duration="2000" data-aos-mirror="true">
+      <div class="feature" id="feature1" data-aos="fade-in" data-aos-delay="250" data-aos-duration="1500" data-aos-mirror="true">
         <div class="left">
           <img src="undraw_correct-answer_vjt7.svg" alt="Feature 1" />
         </div>
@@ -183,7 +180,7 @@
         </div>
       </div>
       <!-- Feature 2 -->
-      <div class="feature" id="feature2" data-aos="fade-left" data-aos-delay="500" data-aos-duration="2000" data-aos-mirror="true">
+      <div class="feature" id="feature2" data-aos="fade-in" data-aos-delay="250" data-aos-duration="1500" data-aos-mirror="true">
         <div class="left">
           <img src="undraw_completion-progress_o56q.svg" alt="Feature 2" />
         </div>
@@ -192,8 +189,8 @@
           <p>Track your learning progress and stay motivated.</p>
         </div>
       </div>
-      <!-- Feature 3 -->
-      <div class="feature" id="feature3" data-aos="fade-right" data-aos-delay="500" data-aos-duration="2000" data-aos-mirror="true">
+      <!-- Feature 3
+      <div class="feature" id="feature3" data-aos="fade-in" data-aos-delay="250" data-aos-duration="1500" data-aos-mirror="true">
         <div class="left">
           <img src="undraw_share-opinion_84l8.svg" alt="Feature 3" />
         </div>
@@ -201,9 +198,9 @@
           <h3>Community Support</h3>
           <p>Join a community of learners and get support from peers.</p>
         </div>
-      </div>
+      </div> -->
       <!-- Feature 4 -->
-      <div class="feature" id="feature4" data-aos="fade-left" data-aos-delay="500" data-aos-duration="2000" data-aos-mirror="true">
+      <div class="feature" id="feature4" data-aos="fade-in" data-aos-delay="250" data-aos-duration="1500" data-aos-mirror="true">
         <div class="left">
           <img src="undraw_video-tutorial_lgts.svg" alt="Feature 4" />
         </div>
@@ -213,7 +210,7 @@
         </div>
       </div>
       <!-- Feature 5 -->
-      <div class="feature" id="feature5" data-aos="fade-right" data-aos-delay="500" data-aos-duration="2000" data-aos-mirror="true">
+      <div class="feature" id="feature5" data-aos="fade-in" data-aos-delay="250" data-aos-duration="1500" data-aos-mirror="true">
         <div class="left">
           <img src="undraw_my-app_15n4 (1).svg" alt="Feature 5" />
         </div>
@@ -306,15 +303,15 @@
       <div class="topfooter">
           <div class="socialmedia">
             <h3>Connect with us on:</h3>
-            <a href="">WhatsApp</a>
-            <a href="">X</a>
-            <a href="">Instagram</a>
-            <a href="">Facebook</a>
+            <a href=""><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href=""><i class="fa-brands fa-square-x-twitter"></i> X-twitter</a>
+            <a href=""><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href=""><i class="fa-brands fa-facebook"></i> Facebook</a>
           </div>
           <div class="contact">
             <h3>Contact Us</h3>
-            <p>Email:<a href=""> essienvictoria2020@gmail.com</a></p>
-            <p>Location: <a href=""> Enugu, Nigeria</a></p>
+            <p><i class="fa-solid fa-envelope"></i> Email:<a href="">essienvictoria2020@gmail.com</a></p>
+            <p><i class="fa-solid fa-location-dot"></i> Location: <a href="">Enugu, Nigeria</a></p>
           </div>
       </div>
       <div class="newsletter">
@@ -342,6 +339,29 @@
         <p>All rights reserved @ Patcheloper Tech</p>
       </div>
     </footer>
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAIm3vXpVXmugVX8KCD5E8mRiMyGONT9EQ",
+    authDomain: "language-learning-websit-c28d1.firebaseapp.com",
+    projectId: "language-learning-websit-c28d1",
+    storageBucket: "language-learning-websit-c28d1.firebasestorage.app",
+    messagingSenderId: "1026651347217",
+    appId: "1:1026651347217:web:39f5f1df3bc500bbf2d4b0",
+    measurementId: "G-FYYV09QXRN"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
     <script src="script.js"></script>
       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
