@@ -1,17 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     color: var(--text-color);
-    font-family: 'Exo', sans-serif;
+    font-family: 'Nunito sans', sans-serif;
 }
 
 :root{
-    --background-color: rgb(255, 248, 225);
+    --section-background: #fffdf7;
+    --background-color:#fafafa;
     --text-color: rgb(47, 47, 47);
     --green:rgb(56, 102, 65);
     --orange:rgb(244, 140, 6);
     --coral:rgb(230, 57, 70);
+    --button:#d84315;
 }
 
 body{
@@ -19,14 +24,22 @@ body{
 }
 
 .introduction{
-   display: flex;
+    display: flex;
     flex-direction: column;
-    margin: 0 230px;
+    /* margin: 0 230px; */
     padding: 20px;
+}
+.introduction h1{
+    font-size: 32px;
+    font-family: 'ubuntu', sans-serif;
+}
+.introduction h2{
+    font-size: 20px;
+    font-family:'Nunito sans', sans serif;
 }
 
 .sections{
-    margin: 0 250px;
+    margin: 0 150px;
     margin-top: 30px;
     display: flex;
     align-items:baseline;
@@ -39,14 +52,14 @@ body{
     display: flex;
     flex-direction: column;
     gap: 15px;
-    background-color: wheat;
+    background-color: var(--section-background);
     padding: 20px;
     border-radius: 10px;
-    gap:30px;
-    width:55%;
+    /* gap:30px; */
+    width:65%;
 }
 
-.phrase{
+.phrase,.sentences{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,19 +68,20 @@ body{
     border-radius: 5px;  
 }
 
-.phrase{
-    font-size: 25px;
+.phrase,.sentences{
+    font-size: 16px;
+    font-family: 'Nunito sans', sans serif ;
 }
 
 .fa-circle-play{
     font-size: 40px;
-    color: var(--coral);
+    color: var(--button);
     cursor: pointer;
 }
 .score{
     font-size: 18px;
     font-weight: 600;
-    background-color: wheat;
+    background-color: var(--section-background);
     padding: 20px;
     border-radius: 5px;
     width: 43%;
@@ -82,15 +96,16 @@ body{
 }
 
 footer{
-    position: sticky;
+    /* position: sticky;
     bottom: 0;
     z-index: 100;
-    text-align: center;
-    background-color: var(--coral);
+     */    text-align: center;
+    /* background-color: var(--coral); */
     color: white;
     width: 100%;
     padding: 20px;
 }
+
 .buttons{
     display: flex;
     justify-content: space-between;
@@ -98,7 +113,7 @@ footer{
 }
 
 footer a{
-    background-color: white;
+    background-color:var(--button);
     color: var(--text-color);
     border: none;
     padding: 20px 30px;

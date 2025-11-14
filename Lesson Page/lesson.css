@@ -1,33 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     color: var(--text-color);
-    font-family: 'Exo', sans-serif;
+    /* font-size: 16px; */
+    font-family: 'Nunito sans', sans-serif;
 }
 
 :root{
-    --background-color: rgb(255, 248, 225);
+    --section-background: #fffdf7;
+    --background-color:#fafafa;
     --text-color: rgb(47, 47, 47);
     --green:rgb(56, 102, 65);
     --orange:rgb(244, 140, 6);
     --coral:rgb(230, 57, 70);
+    --button:#d84315;
 }
 body{
     background-color: var(--background-color);
-    overflow-x: hidden;
-
+    font-size: 16px;
+    font-family: 'Nunito sans', sans-serif;
 }
-
-
-
 
 header{
     /* position:fixed; */
     /* top:0; */
     /* left:0; */
     width: 100%;
-    background-image: linear-gradient(to right, var(--coral), #ffe4b5);
+    /* background-image: linear-gradient(to right, var(--coral), #ffe4b5); */
+    background-color: var(--background-color);
     z-index: 1000;
     display: flex;
     justify-content:space-between;
@@ -37,9 +41,30 @@ header{
     font-family: exo;
     font-weight: 300;
     padding:15px;
+    border-bottom:1px solid var(--button);
     /* margin-bottom: 80px; */
 }
+/*styling for the logo  */
+header .left {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    /* background-color:var(--background-color) ; */
+    padding: 5px;
+    border-radius: 7px;
+}
 
+span.naija {
+    color: #004225;
+}
+
+span.tongues {
+    color: #f0efef;
+}
+/* 
 header.scrolled{
     box-shadow: 0px 2px 10px rgba(131, 9, 9, 0.808);
     background-image: linear-gradient(to right, var(--coral), #ffe4b5);
@@ -48,22 +73,26 @@ header.scrolled{
 header.tagline-section{
     background-color: var(--background-color);
     background-image: none;
-}
+} */
 
 .main{
     display: flex;
 }
 
 .sidebar{
-    background-color: var(--coral);
+    /* background-image: linear-gradient(to bottom, var(--coral), #ffe4b5);*/
+    background-color: var(--background-color);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    border-right:1px solid var(--button);
     /* padding:0 20px 0; */
 }
 
 .sidebar a{
     text-decoration: none;
+    font-size: 28px;
+    font-family: 'ubuntu', sans-serif;
     /* margin-bottom: 20px; */
     padding:30px 50px;
 }
@@ -84,12 +113,15 @@ header.tagline-section{
 }
 
 .lesson-header{
-    background-color: var(--coral);
+    background-color: var(--section-background);
     padding: 10px;
     border-radius: 5px;
     text-align: center;
     margin-bottom: 10px;
     width:100%;
+    /* box-shadow: 5px 2px 5px 7px var(--orange); */
+    box-shadow: 5px 3px 6px 1px gray;
+
 }
 .lesson-header img{
     width: 200px;
@@ -99,7 +131,7 @@ a.start{
     margin:0 auto 10px;
     text-decoration: none;
     color: var(--text-color);
-    background-color: var(--background-color);
+    background-color: var(--button);
     padding:5px;
     text-align: center;
     border-radius: 5px;

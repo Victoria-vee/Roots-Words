@@ -10,11 +10,14 @@
 }
 
 :root{
-    --background-color: rgb(255, 248, 225);
+    --background-color: #fffdf7;
+    --section-background:#fafafa;
     --text-color: rgb(47, 47, 47);
     --green:rgb(56, 102, 65);
     --orange:rgb(244, 140, 6);
     --coral:rgb(230, 57, 70);
+    --button:#d84315;
+
 }
 
 body{
