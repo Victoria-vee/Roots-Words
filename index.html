@@ -3,25 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roots & Words</title>
+    <title>NaijaTongues</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="signup.css" />
+    <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://kit.fontawesome.com/5be89bdbaf.js" crossorigin="anonymous"></script>
   </head>
-
+<!-- Start of Project -->
   <body>
+    <!-- Nav bar containing the logo and signup and sign in -->
     <header>
-      <div class="left">Roots & Words</div>
+      <!-- Left Part(logo) -->
+      <div class="left"><span class="naija">Naija</span><span class="tongues">Tongues</span></div>
+      <!-- Right Part(Signin and Signup) -->
       <div class="right">
-        <button id="signup">Get Started</button>
+        <!-- Get started pop up -->
+         <!-- The button -->
+        <button id="signup" class="signup">Get Started</button>
+        <!-- The popup -->
         <div id="signup-popup">
           <div class="container">
-            <span id="close">&times;</span>
+            <!-- Close Button -->
+            <span id="close" class="close">&times;</span>
+            <!-- Popup Navbar -->
             <div class="popup-header">
-              <p class="left">Roots & Words</p>
-              <a class="right" href="#signin">Already Have an account?</a>
+              <div class="left1"><span class="naija">Naija</span><span class="tongues">Tongues</span></div>
+              <a class="right1 signin" href="#signin-popup">Already Have an account?</a>
             </div>
             <div class="hr"></div>
+            <!-- Form for Sign Up -->
             <form action="">
+              <!-- Name -->
               <div class="input-group">
                 <label for="name"></label>
                 <input
@@ -32,6 +45,7 @@
                   required
                 />
               </div>
+              <!-- Email -->
               <div class="input-group">
                 <label for="email"></label>
                 <input
@@ -42,6 +56,7 @@
                   required
                 />
               </div>
+              <!-- Date of Birth -->
               <div class="input-group">
                 <label for="dob"></label>
                 <input
@@ -52,6 +67,7 @@
                   required
                 />
               </div>
+              <!-- Password and Confirm Password -->
               <div class="input-group">
                 <label for="password"></label>
                 <input
@@ -72,23 +88,32 @@
                   required
                 />
               </div>
-              <label for="show"
-                ><input type="checkbox" id="show" /> Show Password</label
-              >
-              <button type="submit" class="formsubmit" href="lessons.html" id="signupsubmit">Sign Up</button>
+              <!-- Show Password Checkbox -->
+              <label for="show">
+                <input type="checkbox" id="show"/> Show Password</label>
+              <!-- Submit Button -->
+              <button type="submit" class="signup" href="lessons.html" id="signupsubmit">Sign Up</button>
             </form>
           </div>
+          <!-- End of Popup -->
         </div>
-        <button id="signin">I already have an account</button>
+        <!-- Sign In Popup -->
+        <!-- The button -->
+        <button id="signin" class="signin">I already have an account</button>
+        <!-- The popup -->
         <div id="signin-popup">
           <div class="container" id="signin-container">
+            <!-- Close Button -->
             <span id="close-signin">&times;</span>
+            <!-- Popup Navbar -->
             <div class="popup-header">
-              <p class="left">Roots & Words</p>
-              <a class="right" href="#signup ">Don't have an account?</a>
+              <p class="left1"><span class="naija">Naija</span><span class="tongues">Tongues</span></p>
+              <a class="right1 signup" href="#signup-popup" id="signuplink">Don't have an account?</a>
             </div>
             <div class="hr"></div>
+            <!-- Form for Sign In -->
             <form action="">
+              <!-- Email -->
               <div class="input-group">
                 <label for="email"></label>
                 <input
@@ -99,6 +124,7 @@
                   required
                 />
               </div>
+              <!-- Password -->
               <div class="input-group">
                 <label for="password"></label>
                 <input
@@ -109,91 +135,238 @@
                   required
                 />
               </div>
-              <label for="show"
-                ><input type="checkbox" id="show" /> Show Password</label
-              >
-              <button type="submit" class="formsubmit" href="lessons.html">Sign Up</button>
+              <!-- Show Password Checkbox -->
+              <label for="show">
+                <input type="checkbox" id="show" /> Show Password</label>
+              <!-- Submit Button -->
+              <button type="submit" class="signin">Sign In</button>
             </form>
           </div>
         </div>
+        <!-- End of Sign In Popup -->
       </div>
+      <!-- End of Navbar -->
     </header>
+    <!-- First sectiom -->
     <section>
+      <!-- Section Text -->
       <div class="about">
         <p>
-          Roots & Words is a website aimed at teaching nigerian languages to all
+          NaijaTongues is a website aimed at teaching Nigerian languages to all
           who want to learn. Whether you're a Nigerian in diaspora, a Nigerian
-          in Nigeria, or a lover of all things Nigerian this website is for you.
+          in Nigeria, or a lover of all things Nigerian this website is for you. Learn common languages and tit and bits about their culture.
         </p>
       </div>
+      <!-- Section Images -->
       <div class="languages">
-        <p>Igbo</p>
-        <p>Efik</p>
-        <p>Yoruba</p>
-        <p>Hausa</p>
-        <p>Tiv</p>
-        <p>Ijaw</p>
-        <p>Nupe</p>
-        <p>Urhobo</p>
-        <p>Igala</p>
-        <p>Ibibio</p>
-        <p>Itsekiri</p>
-        <p>Anaang</p>
-        <p>...And more</p>
+        <img src="Humaaans - 3 Characters.png" alt="3 people talking">
       </div>
+      <!-- End of Section -->
     </section>
     <div class="tagline">
       <p>Become an <i>Expert!</i> One lesson at a time.</p>
+      <p><i>With our amazing features to make learning easy and fun</i></p>
     </div>
-    <footer>
-      <div class="topfooter">
-        <div class="leftfooter">
-          <div class="socialmedia">
-            <h3>Follow us</h3>
-            <a href="">WhatsApp</a>
-            <a href="">X</a>
-            <a href="">Instagram</a>
-            <a href="">Facebook</a>
-          </div>
+    <!-- features -->
+    <div class="features">
+      <!-- Feature 1 -->
+      <div class="feature" id="feature1" data-aos="fade-in" data-aos-delay="250" data-aos-duration="1500" data-aos-mirror="true">
+        <div class="left">
+          <img src="undraw_correct-answer_vjt7.svg" alt="Feature 1" />
         </div>
-
-        <div class="midfooter">
-          <div class="newsletter">
-            <h3>Recieve Language Tips</h3>
+        <div class="right">
+          <h3>Interactive Lessons</h3>
+          <p>Engaging lessons that make learning fun and effective.</p>
+        </div>
+      </div>
+      <!-- Feature 2 -->
+      <div class="feature" id="feature2" data-aos="fade-in" data-aos-delay="250" data-aos-duration="1500" data-aos-mirror="true">
+        <div class="left">
+          <img src="undraw_completion-progress_o56q.svg" alt="Feature 2" />
+        </div>
+        <div class="right">
+          <h3>Progress Tracking</h3>
+          <p>Track your learning progress and stay motivated.</p>
+        </div>
+      </div>
+      <!-- Feature 3
+      <div class="feature" id="feature3" data-aos="fade-in" data-aos-delay="250" data-aos-duration="1500" data-aos-mirror="true">
+        <div class="left">
+          <img src="undraw_share-opinion_84l8.svg" alt="Feature 3" />
+        </div>
+        <div class="right">  
+          <h3>Community Support</h3>
+          <p>Join a community of learners and get support from peers.</p>
+        </div>
+      </div> -->
+      <!-- Feature 4 -->
+      <div class="feature" id="feature4" data-aos="fade-in" data-aos-delay="250" data-aos-duration="1500" data-aos-mirror="true">
+        <div class="left">
+          <img src="undraw_video-tutorial_lgts.svg" alt="Feature 4" />
+        </div>
+        <div class="right">
+          <h3>Expert Guidance</h3>
+          <p>Learn from experienced instructors and language experts.</p>
+        </div>
+      </div>
+      <!-- Feature 5 -->
+      <div class="feature" id="feature5" data-aos="fade-in" data-aos-delay="250" data-aos-duration="1500" data-aos-mirror="true">
+        <div class="left">
+          <img src="undraw_my-app_15n4 (1).svg" alt="Feature 5" />
+        </div>
+        <div class="right">
+          <h3>Mobile Friendly</h3>
+          <p>Access lessons anytime, anywhere on your mobile device.</p>
+        </div>
+      </div>
+    </div>
+    <div class="tagline2">
+      <p>Wanna Start Learning... <button id="signup2" class="signup">Sign Up</button></p>
+              <!-- The popup -->
+        <div id="signup-popup">
+          <div class="container">
+            <!-- Close Button -->
+            <span id="close" class="close">&times;</span>
+            <!-- Popup Navbar -->
+            <div class="popup-header">
+              <p class="left">Roots & Words</p>
+              <a class="right signin" href="#signin-popup">Already Have an account?</a>
+            </div>
+            <div class="hr"></div>
+            <!-- Form for Sign Up -->
             <form action="">
-              <div class="input">
+              <!-- Name -->
+              <div class="input-group">
                 <label for="name"></label>
-                <input type="text" name="name" id="name" placeholder="Name" />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Name"
+                  required
+                />
+              </div>
+              <!-- Email -->
+              <div class="input-group">
                 <label for="email"></label>
                 <input
                   type="email"
-                  name="email"
                   id="email"
-                  placeholder="Email"
+                  name="email"
+                  placeholder="E-mail"
+                  required
                 />
               </div>
-              <div class="submit">
-                <button type="submit" name="submit">Submit</button>
+              <!-- Date of Birth -->
+              <div class="input-group">
+                <label for="dob"></label>
+                <input
+                  type="date"
+                  id="dob"
+                  name="dob"
+                  placeholder="Date of Birth"
+                  required
+                />
               </div>
+              <!-- Password and Confirm Password -->
+              <div class="input-group">
+                <label for="password"></label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <label for="confirmpassword"></label>
+                <input
+                  type="password"
+                  id="confirmpassword"
+                  name="password"
+                  placeholder="Confirm Password"
+                  required
+                />
+              </div>
+              <!-- Show Password Checkbox -->
+              <label for="show">
+                <input type="checkbox" id="show"/> Show Password</label>
+              <!-- Submit Button -->
+              <button type="submit" class="signup" href="lessons.html" id="signupsubmit">Sign Up</button>
             </form>
           </div>
-        </div>
+          <!-- End of Popup -->
+    </div>
 
-        <div class="rightfooter">
+    <footer>
+      <div class="topfooter">
+          <div class="socialmedia">
+            <h3>Connect with us on:</h3>
+            <a href=""><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href=""><i class="fa-brands fa-square-x-twitter"></i> X-twitter</a>
+            <a href=""><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href=""><i class="fa-brands fa-facebook"></i> Facebook</a>
+          </div>
           <div class="contact">
             <h3>Contact Us</h3>
-            <p>Email:<a href="">essienvictoria2020@gmail.com</a></p>
-            <p>Location: <a href="">Enugu, Nigeria</a></p>
+            <p><i class="fa-solid fa-envelope"></i> Email:<a href="">essienvictoria2020@gmail.com</a></p>
+            <p><i class="fa-solid fa-location-dot"></i> Location: <a href="">Enugu, Nigeria</a></p>
           </div>
-        </div>
       </div>
-
+      <div class="newsletter">
+        <h3>Recieve Language Tips</h3>
+        <form action="">
+          <div class="input">
+            <label for="name"></label>
+            <input type="text" name="name" id="name" placeholder="Name" />
+            <label for="email"></label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+            />
+          </div>
+          <div class="submit">
+            <button type="submit" name="submit">Submit</button>
+          </div>
+        </form>
+      </div>
       <div class="hr"></div>
 
       <div class="credits">
         <p>All rights reserved @ Patcheloper Tech</p>
       </div>
     </footer>
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAIm3vXpVXmugVX8KCD5E8mRiMyGONT9EQ",
+    authDomain: "language-learning-websit-c28d1.firebaseapp.com",
+    projectId: "language-learning-websit-c28d1",
+    storageBucket: "language-learning-websit-c28d1.firebasestorage.app",
+    messagingSenderId: "1026651347217",
+    appId: "1:1026651347217:web:39f5f1df3bc500bbf2d4b0",
+    measurementId: "G-FYYV09QXRN"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
     <script src="script.js"></script>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   </body>
 </html>
+    

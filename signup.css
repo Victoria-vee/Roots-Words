@@ -1,4 +1,4 @@
-#signup-popup,#signin-popup{
+ #signup-popup,#signin-popup,#signup-popup2{
     display: none;
     position:fixed;
     top:0px;
@@ -10,16 +10,31 @@
     height:100%;
 }
 
+#close,#close-signin,#close2{
+    position:fixed;
+    top:0;
+    left:10px;
+    font-size: 50px;
+    color: aliceblue;
+}
+
+#close:hover,#close-signin:hover,#close2:hover{
+    color: red;
+    cursor: pointer;
+}
+
 .container{
-    position: relative;
     background-color: white;
+    position: relative;
     height: 100%;
     margin: 0 20%;
     padding:20px 40px 40px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-content: left;
+    justify-items:left;
+    gap:20px; 
 }
 
 #signin-container{
@@ -28,61 +43,72 @@
 }
 
 .container .hr{
-    margin: 30px 0 ;
+    margin: 5px 0 ;
 }
-
+/* Styling for the header */
 .popup-header{
     display: flex;
     justify-content:space-between;
-    align-items: center;
+    align-items: left;
     gap:10px;
     margin: 0;
     padding: 0;
+} 
+/* styling for the logo  */
+ .popup-header .left1{
+    font-family: 'Poppins', sans-serif;
+    font-size:24px;
+    font-weight: 700;
 }
-
-.popup-header .right{
-    font-size:15px;
+.left1 span.naija{
+    color:#004225;
 }
-
-.container input{
+.left1 span.tongues{
+    color:#daaea3;
+}
+/* styling for already have an account link */
+.popup-header .right1{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    /* background-color: var(--background-color); */
+    padding:5px 15px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;   
+}
+ .input-group{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    gap:10px;
     width:100%;
+    margin: 0 50px;
+ }
+.input-group input{
+    /* width:500px; */
     margin-bottom:20px;
     border-radius: 5px;
     border:none;
     border-left: 2px solid black;
     background-color: rgba(168, 164, 164, 0.521);
     padding:15px ;
+    font-size: 16px;
+    font-family: 'Nunito sans',Helvetica, sans-serif;
 }
 
 input[type="checkbox"]{
     width:15px; 
-    margin-right:0;  
+    margin:0;  
 }
 
 label{
     font-size: 15px;
     margin:auto 0 auto auto;
 }
-
-form{
-    flex:1;
-}
-
-#close,#close-signin{
-    position:fixed;
-    top:0;
-    left:10px;
-    font-size: 50px;
-    color: aliceblue;
-}
-
-#close:hover,#close-signin:hover{
-    color: red;
-    cursor: pointer;
-}
-
 .formsubmit{
-    
     width:130px;
-}
+} 
     
