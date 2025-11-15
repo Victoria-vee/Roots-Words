@@ -75,6 +75,11 @@ header.tagline-section{
     background-image: none;
 } */
 
+.fa-circle-user{
+    font-size: 30px;
+    cursor: pointer;
+    margin-right: 35px;
+}
 .main{
     display: flex;
 }

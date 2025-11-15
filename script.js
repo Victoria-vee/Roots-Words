@@ -83,3 +83,15 @@ signup2.onclick = () => {
 close2.onclick = () => {
     signuppopup2.style.display = "none";
 }
+
+// Show password functionality
+    const showPasswordCheckbox = document.getElementById('show');
+    const passwordFields = document.querySelectorAll('input[type="password"]');
+
+    showPasswordCheckbox.addEventListener('change', function() {
+        passwordFields.forEach(field => {
+            field.type = this.checked ? 'text' : 'password';
+        });
+    });
+
+    // Form validation can be added here

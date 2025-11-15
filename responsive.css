@@ -1,0 +1,62 @@
+/* Responsive styles for the NaijaTongues application */
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left, .right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .languages img {
+        width: 100%;
+        height: auto;
+    }
+
+    .features {
+        flex-direction: column;
+    }
+
+    .feature {
+        margin-bottom: 20px;
+    }
+
+    .tagline, .tagline2 {
+        text-align: center;
+    }
+
+    footer {
+        text-align: center;
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+
+    .languages img {
+        width: 80%;
+        height: auto;
+    }
+
+    .features {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .feature {
+        width: 48%;
+        margin-bottom: 20px;
+    }
+}
