@@ -90,18 +90,27 @@ function selectOption(index) {
 
     const options = document.querySelectorAll('.option');
     const question = quizData[currentQuestion];
-    
+    const correctAudio = document.getElementById('correct-audio');
+    const wrongAudio = document.getElementById('wrong-audio');
     options[index].classList.add('selected');
+    
+    if (correctAudio) { wrongAudio.pause(); wrongAudio.currentTime = 0; }
+    if (wrongAudio) { correctAudio.pause(); correctAudio.currentTime = 0; }
+    
     
     if (index === question.correct) {
         options[index].classList.add('correct');
-        document.getElementById('result-message').textContent = '✓ Correct!';
+        // document.getElementById('result-message').textContent = '✓ Correct!';
+        correctAudio.currentTime = 0;
+        correctAudio.play().catch(() => {});
         document.getElementById('result-message').className = 'result-message correct';
         score++;
     } else {
         options[index].classList.add('incorrect');
         options[question.correct].classList.add('correct');
-        document.getElementById('result-message').textContent = '✗ Incorrect!';
+        // document.getElementById('result-message').innerHTML = '<i class="fa-solid fa-square-xmark"></i> Incorrect!';
+        wrongAudio.currentTime = 0;
+        wrongAudio.play().catch(() => {});
         document.getElementById('result-message').className = 'result-message incorrect';
     }
 
@@ -119,14 +128,27 @@ function showResults() {
     const buttons = document.getElementById('quiz-buttons');
     const scoreDiv = document.getElementById('quiz-score');
     const progress = document.getElementById('progress');
+    const scoreBadge = document.getElementById('score-badge');
 
     quiz.innerHTML = '';
-    buttons.innerHTML = `<button onclick="restartQuiz()">Retake Quiz</button><a href="/Lesson Page/basics.html" style="text-decoration: none;"><button>Back to Lesson</button></a>`;
-    progress.textContent = '';
-
+    progress.innerHTML = '';
     const percentage = (score / quizData.length) * 100;
-    scoreDiv.textContent = `Your Score: ${score}/${quizData.length} (${percentage.toFixed(0)}%)`;
+    scoreDiv.textContent = `Your answered ${score}/${quizData.length} You Scored: `;
+    scoreBadge.textContent = `You scored ${percentage.toFixed(0)}%`;
     scoreDiv.style.display = 'block';
+    scoreBadge.style.display = 'block';
+    if (percentage >= 80) {
+        scoreBadge.className = 'score-badge excellent';
+    } else { if (percentage >= 50) {
+        scoreBadge.className = 'score-badge good';
+    } else {
+        scoreBadge.className = 'score-badge poor';
+    }}
+    localStorage.setItem('basicsQuizScore', percentage.toFixed(0));
+
+    buttons.innerHTML = `<button onclick="restartQuiz()">Retake Quiz</button><a href="/Lesson Page/basics.html" style="text-decoration: none;"><button>Back to Lesson</button></a>`;
+
+    
 }
 
 function restartQuiz() {

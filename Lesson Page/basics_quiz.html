@@ -8,23 +8,27 @@
     <script src="https://kit.fontawesome.com/5be89bdbaf.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="back">
-        <a href="basics.html">Back to Lesson</a>
+    <div class="header">
+        <div class="back">
+            <a href="/Lesson Page/basics.html"><i class="fa-solid fa-caret-left"></i>Back</a>
+        </div>
+        <p>Basics Quiz</p>
     </div>
 
-    <div class="introduction">
-        <h1>Basics Quiz</h1>
-        <h2>Test your knowledge on Igbo basics</h2>
-    </div>
+    
 
     <div class="quiz-container">
         <div class="progress" id="progress"></div>
         <div id="quiz-content"></div>
         <div id="result-message" class="result-message"></div>
+        <div id="quiz-score" class="quiz-score"></div>
+        <div id="score-badge" class="score-badge"></div>
         <div class="quiz-buttons" id="quiz-buttons"></div>
-        <div id="quiz-score" class="quiz-score" style="display: none;"></div>
     </div>
-
+        
     <script src="basics_quiz.js"></script>
+    <audio id="wrong-audio" src="mixkit-game-show-buzz-in-3090.wav"></audio>
+    <audio id="select-audio" src="mixkit-modern-click-box-check-1120.wav"></audio>
+    <audio id="correct-audio" src="mixkit-correct-answer-tone-2870.wav"></audio>
 </body>
 </html>
