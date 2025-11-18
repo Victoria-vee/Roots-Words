@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['user_name'] = $user['name'];
         $_SESSION['user_email'] = $user['email'];
         
-        header("Location:Lessons Page/lessons.html");
+        header("Location:Lessons_Page/lessons.html");
         exit();
     } else {
         $_SESSION['error'] = "Invalid password!";

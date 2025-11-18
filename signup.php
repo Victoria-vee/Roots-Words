@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <h2>Welcome, " . htmlspecialchars($name) . "!</h2>
             <p>Your account has been created successfully.</p>
             <p>Email: " . htmlspecialchars($email) . "</p>
-            <a href='Lesson Page/lesson.html' style='margin:10px auto; background-color:#d84315;'><button>Go to Lessons</button></a>
+            <a href='Lesson_Page/lesson.html' style='margin:10px auto; background-color:#d84315;'><button>Go to Lessons</button></a>
         </div>
     </body>
     </html>";
