@@ -1,18 +1,26 @@
-const icons = document.querySelectorAll(".fa-language");
+document.querySelectorAll(".words").forEach(phrase => {
+    const igbo = phrase.querySelector(".igbo");
+    const english = phrase.querySelector(".english");
 
-icons.forEach(icon => {
-  icon.addEventListener("click", () => {
-    const sentence = icon.closest(".sentence");
-    const igboText = sentence.querySelector(".igbo");
-    const englishText = sentence.querySelector(".english");
+    phrase.addEventListener("click", () => {
+        // Toggle Igbo styling
+        igbo.classList.toggle("clicked");
 
-    // Toggle igbo text highlight
-    igboText.classList.toggle("clicked");
-    // Toggle visibility
-    if (englishText.style.display === "block") {
-      englishText.style.display = "none";
-    } else {
-      englishText.style.display = "block";
-    }
-  });
+        // Toggle English visibility
+        english.style.display =
+            english.style.display === "block" ? "none" : "block";
+    });
 });
+
+
+const savedScore = localStorage.getItem('greetingsQuizScore');
+if (savedScore) {
+    document.querySelector('.score-badge').textContent = savedScore + '%';
+    if (savedScore >= 80) {
+        document.querySelector('.score-badge').classList.add('excellent');
+    } else if (savedScore >= 50) {
+        document.querySelector('.score-badge').classList.add('good');
+    } else {
+        document.querySelector('.score-badge').classList.add('poor');
+    }
+}

@@ -85,13 +85,4 @@ close2.onclick = () => {
 }
 
 // Show password functionality
-    const showPasswordCheckbox = document.getElementById('show');
-    const passwordFields = document.querySelectorAll('input[type="password"]');
-
-    showPasswordCheckbox.addEventListener('change', function() {
-        passwordFields.forEach(field => {
-            field.type = this.checked ? 'text' : 'password';
-        });
-    });
-
-    // Form validation can be added here
+const togglePassword = document.querySelector('#togglePassword');

@@ -1,0 +1,57 @@
+/* Settings page overrides and helpers */
+.settings-main {
+  max-width: 700px;
+  margin: 1.2rem auto;
+  padding: 0 12px;
+}
+
+.password-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#display-password {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  min-width: 220px;
+  background: #fff;
+}
+
+.show-label {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.settings-actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+}
+
+/* Button styles for the settings actions (sign out / back) */
+.settings-actions .quiz,
+.settings-actions .next {
+  background-color: var(--button, #d84315);
+  color: var(--text-color, rgb(47,47,47));
+  padding: 12px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.settings-actions .quiz:hover,
+.settings-actions .next:hover {
+  filter: brightness(0.95);
+}
+
+/* Accessible visually-hidden helper */
+.sr-only {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}

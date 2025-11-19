@@ -146,7 +146,7 @@ function showResults() {
     }}
     localStorage.setItem('basicsQuizScore', percentage.toFixed(0));
 
-    buttons.innerHTML = `<button onclick="restartQuiz()">Retake Quiz</button><a href="/Lesson Page/basics.html" style="text-decoration: none;"><button>Back to Lesson</button></a>`;
+    buttons.innerHTML = `<button onclick="restartQuiz()">Retake Quiz</button><a href="basics.html" style="text-decoration: none;"><button>Back to Lesson</button></a>`;
 
     
 }

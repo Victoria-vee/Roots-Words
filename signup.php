@@ -1,66 +1,69 @@
 <?php
-include('connection.php');
-// Check if form was submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Sanitize and validate input
-    $name = trim($_POST['name'] ?? '');
-    $email = trim($_POST['email'] ?? '');
-    $dob = trim($_POST['dob'] ?? '');
-    $password = $_POST['password'] ?? '';
-    $confirmPassword = $_POST['confirmpassword'] ?? ''; // Note: Both inputs have name="password"
+require_once 'connection.php';
 
-    // Validate inputs
-    $errors = [];
-    
-    if (empty($name)) $errors[] = "Name is required";
-    
-    
-    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Valid email is required";
-    
-    
-    if (empty($dob))  $errors[] = "Date of birth is required";
-    
-    
-    if (empty($password) || strlen($password) < 6) 
-        $errors[] = "Password must be at least 6 characters";
-    
-    
-    if ($password !== $confirmPassword) $errors[] = "Passwords do not match";
-    
-    // If there are errors, display them
-  if (!empty($errors)) {
-        $msg = addslashes(implode("\\n", $errors));
-        echo "<script>alert('{$msg}'); window.location.href='index.html#signup-popup';</script>";
-        exit;
-    }
+// Simple sanitizer helper
+function clean($v){
+    return trim(strip_tags($v));
+}
+
+$errors = [];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = isset($_POST['name']) ? clean($_POST['name']) : '';
+    $email = isset($_POST['email']) ? filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL) : '';
+    $dob = isset($_POST['dob']) ? clean($_POST['dob']) : '';
+    $password = isset($_POST['password']) ? $_POST['password'] : '';
+    $confirm = isset($_POST['confirmpassword']) ? $_POST['confirmpassword'] : '';
+
+    // Basic validation
+    if (!$name) $errors[] = 'Name is required.';
+    if (!$email || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = 'Valid email is required.';
+    if (!$dob) $errors[] = 'Date of birth is required.';
+    if (!$password) $errors[] = 'Password is required.';
+    if ($password !== $confirm) $errors[] = 'Passwords do not match.';
+    if (strlen($password) < 6) $errors[] = 'Password must be at least 6 characters.';
+
+    if (empty($errors)) {
         
 
-            // Hash password securely
-    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-        $sql = "INSERT INTO users (name, email, dob, password) VALUES (?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssss", $name, $email, $dob, $hashedPassword);
-    if ($stmt->execute()) {
-
-    echo "<!DOCTYPE html>
-    <html>
-    <head>
-        <title>Signup Successful</title>
-        <link rel='stylesheet' href='style.css' />
-    </head>
-    <body>
-        <div style='padding: 20px; max-width: 500px; margin: 50px auto; text-align: center;'>
-            <h2>Welcome, " . htmlspecialchars($name) . "!</h2>
-            <p>Your account has been created successfully.</p>
-            <p>Email: " . htmlspecialchars($email) . "</p>
-            <a href='Lesson_Page/lesson.html' style='margin:10px auto; background-color:#d84315;'><button>Go to Lessons</button></a>
-        </div>
-    </body>
-    </html>";
-} else {
-        echo "<script>alert('Signup failed: " . addslashes($stmt->error) . "'); window.location.href='index.html#signup-popup';</script>";
+        // Check for existing email
+        $stmt = $conn->prepare('SELECT id FROM users WHERE email = ? LIMIT 1');
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $stmt->store_result();
+        if ($stmt->num_rows > 0) {
+            $errors[] = 'An account with that email already exists.';
+        }
+        $stmt->close();
     }
-    
-    $stmt->close();
+
+    if (empty($errors)) {
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $insert = $conn->prepare('INSERT INTO users (name,email,dob,password) VALUES (?,?,?,?)');
+        $insert->bind_param('ssss', $name, $email, $dob, $hash);
+        if ($insert->execute()) {
+            // On success redirect to simple success page (pass name safely URL-encoded)
+            header('Location: success.php?name=' . urlencode($name));
+            exit;
+        } else {
+            $errors[] = 'Failed to create account. Please try again.';
+        }
+    }
 }
+
+// If we reach here show errors (very simple)
 ?>
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Sign up result</title></head>
+<body>
+<?php if (!empty($errors)): ?>
+  <h2>There were errors with your submission</h2>
+  <ul>
+    <?php foreach($errors as $e): ?>
+      <li><?php echo htmlspecialchars($e); ?></li>
+    <?php endforeach; ?>
+  </ul>
+  <p><a href="index.html">Go back</a></p>
+<?php endif; ?>
+</body>
+</html>
