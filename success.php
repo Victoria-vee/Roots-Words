@@ -1,5 +1,6 @@
 <?php
-$name = isset($_GET['name']) ? htmlspecialchars($_GET['name']) : 'User';
+session_start();
+$name = isset($_GET['name']) ? htmlspecialchars($_GET['name']) : (isset($_SESSION['user_name']) ? htmlspecialchars($_SESSION['user_name']) : 'User');
 ?>
 <!doctype html>
 <html>

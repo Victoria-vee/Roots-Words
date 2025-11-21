@@ -1,4 +1,123 @@
-/* Settings page overrides and helpers */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+  --section-background: #fffdf7;
+  --background-color: #fafafa;
+  --text-color: rgb(47, 47, 47);
+  --orange: rgb(244, 140, 6);
+  --button: #d84315;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+/* Back button */
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  background: var(--orange);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 25px 20px 0;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.1);
+}
+
+.back:hover {
+  background: var(--button);
+}
+
+.back a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Introduction */
+.introduction {
+  margin: 15px auto 30px;
+  padding: 9px 20px 18px;
+  text-align: center;
+}
+
+.introduction h1 {
+  margin: 0;
+  font-size: 54px;
+  color: var(--text-color);
+  font-weight: 700;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.description {
+  margin: 8px 0 0;
+  color: var(--text-color);
+  font-size: 16px;
+}
+
+/* Main sections */
+.sections {
+  margin: 0 150px;
+  margin-top: 30px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 20px;
+}
+
+.phrases {
+  margin-top: 20px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: var(--section-background);
+  padding: 20px;
+  border-radius: 10px;
+  width: 65%;
+}
+
+.phrase {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.phrase .igbo,
+.sentences .igbo {
+  word-break: break-word;
+}
+
+.igbo:hover,
+.clicked {
+  cursor: pointer;
+  border-bottom: 1px dotted var(--text-color);
+  padding-top: 2px;
+  padding-bottom: 5px;
+  color: var(--button);
+}
+
+.english {
+  display: none;
+}
+
+/* Settings-specific styles */
 .settings-main {
   max-width: 700px;
   margin: 1.2rem auto;
@@ -30,11 +149,10 @@
   gap: 12px;
 }
 
-/* Button styles for the settings actions (sign out / back) */
 .settings-actions .quiz,
 .settings-actions .next {
-  background-color: var(--button, #d84315);
-  color: var(--text-color, rgb(47,47,47));
+  background-color: var(--button);
+  color: var(--text-color);
   padding: 12px 18px;
   border-radius: 6px;
   text-decoration: none;
@@ -47,11 +165,42 @@
   filter: brightness(0.95);
 }
 
-/* Accessible visually-hidden helper */
+/* Accessibility */
 .sr-only {
   position: absolute !important;
-  height: 1px; width: 1px;
+  height: 1px;
+  width: 1px;
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
+}
+
+/* Media queries */
+@media (max-width: 900px) {
+  .sections {
+    display: block;
+    margin: 0 10px;
+    width: 100%;
+  }
+
+  .phrases {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .introduction {
+    padding: 8px 12px 14px;
+  }
+
+  .introduction h1 {
+    line-height: 1.05;
+  }
+
+  .phrase {
+    padding: 8px;
+    gap: 8px;
+    flex-direction: row;
+    align-items: center;
+  }
 }
