@@ -159,6 +159,5 @@ body{
 @media (max-width:640px){
   .introduction h1{font-size:1.6rem}
   .description{font-size:0.95rem}
-  .back{position:fixed; top:10px; left:10px; z-index:40}
   .container{padding-top:54px}
 }

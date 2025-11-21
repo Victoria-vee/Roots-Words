@@ -74,7 +74,7 @@ closesignin.onclick=()=>{
 };
 
 signupsubmit.onclick=()=>{
-        location.href = "/Lesson Page/lesson.html"; // Redirect to home page
+        location.href = "Lesson_Page/lesson.html"; // Redirect to lessons page
 }
 signup2.onclick = () => {
     signuppopup2.style.display = "block";
