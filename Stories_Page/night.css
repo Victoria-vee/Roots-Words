@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+:root{
+  /* color scheme copied from stories.css */
+  --section-background: #fffdf7;
+  --background-color: #fafafa;
+  --text-color: rgb(47, 47, 47);
+  --green: rgb(56, 102, 65);
+  --orange: rgb(244, 140, 6);
+  --coral: rgb(230, 57, 70);
+  --button: #d84315;
+
+  /* visual/layout tokens retained for this page */
+  --card-shadow: 0 6px 18px rgba(2,6,23,0.06);
+  --card-shadow-hover: 0 12px 30px rgba(2,6,23,0.08);
+  --accent: var(--orange);
+  --muted: rgba(47,47,47,0.55);
+  --radius: 12px;
+}
+
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  color: var(--text-color);
+  font-family: 'Nunito Sans', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+
+/* Back link (matches stories.css style) */
+.back{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  background:var(--orange);
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:600;
+  margin:18px 18px 0;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+}
+
+.back a{
+  color:var(--background-color);
+  text-decoration:none;
+}
+/* Heading and text */
+ h1{
+  font-size:54px;
+  color:var(--text-color);
+  text-align:center;
+  font-weight:700;
+  letter-spacing:0.6px;
+  font-family: 'ubuntu', sans-serif;
+  margin-bottom:12px;
+  
+}
+/* Content card */
+.content{
+  max-width:920px;
+  margin:36px auto;
+  padding:28px 32px;
+  background-color: var(--section-background);
+  border-radius:12px;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.568);
+  /* removed heavy blur for consistency with stories.css */
+}
+
+
+.content p{
+  color:var(--text-color);
+  font-size:20px;
+  line-height:1.8;
+  text-align:justify;
+}
+
+.fa-language:hover{
+  color:#d84315;
+  cursor: pointer;
+}
+
+.sentences{
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px; 
+    font-size: 16px;
+    font-family: 'Nunito sans', sans serif ; 
+}
+
+/* hide english translations by default and style toggled state */
+.sentence .english{
+  display:none;
+  margin:6px 0 0;
+  color:var(--text-color);
+  font-weight:600;
+  transition: opacity .18s ease;
+}
+
+/* highlight igbo sentence + language icon when translation is shown */
+.sentence .igbo{
+  transition: color .18s ease, transform .12s ease;
+}
+.igbo.clicked{
+    border-bottom:2px dashed var(--text-color);
+    padding-top:1px;
+    padding-bottom:5px;
+    color: var(--button);
+}
+
+/* icon state */
+.fa-language.active{
+  color: var(--orange);
+  transform: translateY(-2px);
+}
+
+
+/* subtle decorative rule */
+.content::before{
+  content: '';
+  display:block;
+  height:4px;
+  width:72px;
+  background: linear-gradient(90deg,var(--accent), rgba(244,140,6,0.5));
+  margin:0 auto 18px;
+  border-radius:4px;
+}
+
+/* small screen tweaks matching stories.css responsive approach */
+@media (max-width:640px){
+  .content{ padding:20px; margin-top:72px; }
+  .content h3{ font-size:1.4rem; }
+  .content p{ font-size:1rem; line-height:1.6; }
+  .back{ position:fixed; top:10px; left:10px; z-index:40; }
+}
+

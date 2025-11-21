@@ -1,66 +1,49 @@
 <?php
 include('connection.php');
-// Check if form was submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Sanitize and validate input
-    $name = trim($_POST['name'] ?? '');
-    $email = trim($_POST['email'] ?? '');
-    $dob = trim($_POST['dob'] ?? '');
-    $password = $_POST['password'] ?? '';
-    $confirmPassword = $_POST['confirmpassword'] ?? ''; // Note: Both inputs have name="password"
 
-    // Validate inputs
+if (isset($_POST['submit'])) {
+    $name = trim($_POST['name']);
+    $email = trim($_POST['email']);
+    $dob = trim($_POST['dob']);
+    $password = $_POST['password'];
+    $confirmpassword = $_POST['confirmpassword'];
+
     $errors = [];
-    
-    if (empty($name)) $errors[] = "Name is required";
-    
-    
-    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Valid email is required";
-    
-    
-    if (empty($dob))  $errors[] = "Date of birth is required";
-    
-    
-    if (empty($password) || strlen($password) < 6) 
-        $errors[] = "Password must be at least 6 characters";
-    
-    
-    if ($password !== $confirmPassword) $errors[] = "Passwords do not match";
-    
-    // If there are errors, display them
-  if (!empty($errors)) {
-        $msg = addslashes(implode("\\n", $errors));
-        echo "<script>alert('{$msg}'); window.location.href='index.html#signup-popup';</script>";
-        exit;
-    }
-        
 
-            // Hash password securely
-    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-        $sql = "INSERT INTO users (name, email, dob, password) VALUES (?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssss", $name, $email, $dob, $hashedPassword);
-    if ($stmt->execute()) {
+    // Validation
+    if (empty($name)) $errors[] = 'Name is required.';
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = 'Valid email is required.';
+    if (empty($dob)) $errors[] = 'Date of birth is required.';
+    if (empty($password)) $errors[] = 'Password is required.';
+    if ($password !== $confirmpassword) $errors[] = 'Passwords do not match.';
+    if (strlen($password) < 6) $errors[] = 'Password must be at least 6 characters.';
 
-    echo "<!DOCTYPE html>
-    <html>
-    <head>
-        <title>Signup Successful</title>
-        <link rel='stylesheet' href='style.css' />
-    </head>
-    <body>
-        <div style='padding: 20px; max-width: 500px; margin: 50px auto; text-align: center;'>
-            <h2>Welcome, " . htmlspecialchars($name) . "!</h2>
-            <p>Your account has been created successfully.</p>
-            <p>Email: " . htmlspecialchars($email) . "</p>
-            <a href='Lesson Page/lesson.html' style='margin:10px auto; background-color:#d84315;'><button>Go to Lessons</button></a>
-        </div>
-    </body>
-    </html>";
-} else {
-        echo "<script>alert('Signup failed: " . addslashes($stmt->error) . "'); window.location.href='index.html#signup-popup';</script>";
+    if (empty($errors)) {
+        // Check if email already exists
+        $stmt = $conn->prepare('SELECT id FROM users WHERE email = ? LIMIT 1');
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $stmt->store_result();
+        if ($stmt->num_rows > 0) {
+            $errors[] = 'An account with that email already exists.';
+        }
+        $stmt->close();
     }
-    
-    $stmt->close();
+
+    if (empty($errors)) {
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $stmt = $conn->prepare('INSERT INTO users (name, email, dob, password) VALUES (?, ?, ?, ?)');
+        $stmt->bind_param('ssss', $name, $email, $dob, $hash);
+        if ($stmt->execute()) {
+            header("Location: success.php?name=" . urlencode($name));
+            exit;
+        } else {
+            echo '<script>alert("Failed to create account. Please try again."); window.location.href = "index.html";</script>';
+        }
+        $stmt->close();
+    } else {
+        $errorMsg = implode('\\n', $errors);
+        echo '<script>alert("' . $errorMsg . '"); window.location.href = "index.html";</script>';
+    }
 }
 ?>

@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    font-family: 'Nunito sans', sans-serif;
+}
+
+:root{
+    --section-background: #fffdf7;
+    --background-color:#fafafa;
+    --text-color: rgb(47, 47, 47);
+    --green:rgb(56, 102, 65);
+    --orange:rgb(244, 140, 6);
+    --coral:rgb(230, 57, 70);
+    --button:#d84315;
+}
+body{
+    background-color: var(--section-background);
+    min-height: 100vh;
+}
+
+
+.header {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header p {
+    text-align: center;
+    /* margin-bottom: 20px; */
+    font-size: 25px;
+    font-family: 'ubuntu', sans-serif;
+}
+
+/* Back styling */
+.back{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  background:var(--orange);
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:600;
+  /* margin:25px 25px 0; */
+  box-shadow: 0 6px 18px rgba(2,6,23,0.1);
+}
+
+.back:hover{
+  background:var(--button);
+
+}
+
+.back a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.quiz-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color:var(--section-background);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.quiz-question {
+    margin: 30px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+.option {
+    padding: 15px;
+    background-color: var(--background-color);
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.option:hover {
+    background-color: #e8e8e8;
+    border-color: var(--button);
+}
+
+.option.selected {
+    background-color: var(--button);
+    color: white;
+    border-color: #d84315;
+}
+
+.option.correct {
+    background-color: var(--green);
+    color: white;
+    border-color: var(--green);
+}
+
+.option.incorrect {
+    background-color: var(--coral);
+    color: white;
+    border-color: #f44336;
+}
+
+.quiz-buttons {
+    display: flex;
+    gap: 10px;
+    margin: 30px 20px 20px 0px;
+    justify-content: center;
+}
+
+.quiz-buttons button {
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--button);
+    color: var(--section-background);
+    transition: 0.3s;
+}
+
+.quiz-buttons button:hover {
+    background-color: #bf360c;
+}
+
+.quiz-buttons button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.progress {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #666;
+}
+
+.result-message {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.result-message.correct {
+    color: var(--green);
+}
+
+.result-message.incorrect {
+    color: var(--coral);
+}
+
+.quiz-score {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-color) ;
+    display:none
+}
+.score-badge {
+    display: none;
+    width:fit-content;
+    margin: 10px auto;
+    padding: 8px 14px;
+    color: var(--text-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    font-weight: bold;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+ .score-badge {
+    font-size: 20px;
+}
+ .score-badge.excellent {
+    background-color: var(--green);
+}
+.score-badge.good {
+    background-color: var(--orange);
+}
+.score-badge.poor {
+    background-color: var(--coral);
+}

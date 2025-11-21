@@ -1,45 +1,50 @@
-<?php
-session_start();
-include ('connection.php');
 
-// Check if form is submitted
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
+
+
+<?php
+include('connection.php');
+
+if (isset($_POST['submit'])) {
+    $email = trim($_POST['email']);
     $password = $_POST['password'];
-    
-    // SQL query to validate email exists
-    $emailValidation = "SELECT COUNT(*) as count FROM users WHERE email = '$email'";
-    $emailResult = mysqli_query($conn, $emailValidation);
-    $emailRow = mysqli_fetch_assoc($emailResult);
-    
-    // SQL query to validate password matches
-    $passwordValidation = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
-    $passwordResult = mysqli_query($conn, $passwordValidation);
-    
-    // Check email validation
-    if ($emailRow['count'] == 0) {
-        $_SESSION['error'] = "Email not found!";
-        header("Location:index.html#signin-popup");
-        exit();
+
+    $errors = [];
+
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = 'Valid email is required.';
     }
-    
-    // Check password validation
-    if (mysqli_num_rows($passwordResult) > 0) {
-        $user = mysqli_fetch_assoc($passwordResult);
-        
-        // Set session variables
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['user_name'] = $user['name'];
-        $_SESSION['user_email'] = $user['email'];
-        
-        header("Location:Lessons Page/lessons.html");
-        exit();
-    } else {
-        $_SESSION['error'] = "Invalid password!";
-        header("Location:index.html#signin-popup");
-        exit();
+    if (empty($password)) {
+        $errors[] = 'Password is required.';
+    }
+
+    if (empty($errors)) {
+        $stmt = $conn->prepare('SELECT id, name, password FROM users WHERE email = ? LIMIT 1');
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $stmt->store_result();
+        if ($stmt->num_rows == 1) {
+            $stmt->bind_result($id, $name, $hashed_password);
+            $stmt->fetch();
+            if ($hashed_password && password_verify($password, $hashed_password)) {
+                // Successful login, perhaps start session
+                session_start();
+                $_SESSION['user_id'] = $id;
+                $_SESSION['user_name'] = $name;
+                $redirectName = isset($name) ? $name : 'User';
+                header("Location: success.php?name=" . urlencode($redirectName));
+                exit;
+            } else {
+                $errors[] = 'Invalid email or password.';
+            }
+        } else {
+            $errors[] = 'Invalid email or password.';
+        }
+        $stmt->close();
+    }
+
+    if (!empty($errors)) {
+        $errorMsg = implode('\\n', $errors);
+        echo '<script>alert("' . $errorMsg . '"); window.location.href = "index.html";</script>';
     }
 }
-
-mysqli_close($conn);
 ?>

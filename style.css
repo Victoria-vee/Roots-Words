@@ -353,3 +353,28 @@ a{
     text-align: center;
     margin-top: 25px;
 }
+
+/* Streak badge */
+.streak{
+    display: inline-flex;
+    align-items: center;
+    gap:6px;
+    margin-left: 12px;
+    background: rgba(255,255,255,0.12);
+    padding: 6px 10px;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: 700;
+    font-family: 'Ubuntu', sans-serif;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+.streak i{
+    color: #ff6b35;
+    font-size: 18px;
+}
+#streak-count{
+    font-size: 14px;
+}
+.streak[title]{
+    cursor: default;
+}

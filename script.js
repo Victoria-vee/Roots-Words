@@ -3,40 +3,40 @@ const span = document.getElementsByTagName("span")[1];
 
 window.addEventListener("scroll", () => {
     
-    if (window,scrollY > 0) {
+    if (window.scrollY > 0) {
         header.classList.add("scrolled");
     } else {
         header.classList.remove("scrolled");
     }
-    if(window,scrollY > 350){
+    if(window.scrollY > 350){
         header.classList.add("tagline-section");
         span.classList.add("tagline-section");
     }else{
         header.classList.remove("tagline-section");
         span.classList.remove("tagline-section");
     }   
-    if (window,scrollY > 630) {
+    if (window.scrollY > 630) {
         header.classList.add("feature1");
         span.classList.remove("tagline-section");
     } else {
         header.classList.remove("feature1");
     }
-    if (window,scrollY > 1160) {
+    if (window.scrollY > 1160) {
         header.classList.add("feature2");
     } else {
         header.classList.remove("feature2");
     }
-    if (window,scrollY > 1690) {
+    if (window.scrollY > 1690) {
         header.classList.add("feature4");
     } else {
         header.classList.remove("feature4");
     }
-    if (window,scrollY > 2220) {
+    if (window.scrollY > 2220) {
         header.classList.add("feature5");
     } else {
         header.classList.remove("feature5");
     }  
-    if (window,scrollY > 2750) {
+    if (window.scrollY > 2750) {
         header.classList.add("tagline-section2");
         span.classList.add("tagline-section2");
     } else {
@@ -84,14 +84,26 @@ close2.onclick = () => {
     signuppopup2.style.display = "none";
 }
 
-// Show password functionality
-    const showPasswordCheckbox = document.getElementById('show');
-    const passwordFields = document.querySelectorAll('input[type="password"]');
+// Show password functionality for signup
+const checkbox = document.getElementById("showPassword");
+const password = document.getElementById("signup-password");
+const confirmPassword = document.getElementById("signup-confirmpassword");
 
-    showPasswordCheckbox.addEventListener('change', function() {
-        passwordFields.forEach(field => {
-            field.type = this.checked ? 'text' : 'password';
-        });
-    });
+if (checkbox) {
+  checkbox.addEventListener("change", function () {
+    const type = this.checked ? "text" : "password";
+    if (password) password.type = type;
+    if (confirmPassword) confirmPassword.type = type;
+  });
+}
 
-    // Form validation can be added here
+// Show password functionality for signin
+const signinCheckbox = document.getElementById("showPasswordSignin");
+const signinPassword = document.getElementById("signin-password");
+
+if (signinCheckbox) {
+  signinCheckbox.addEventListener("change", function () {
+    const type = this.checked ? "text" : "password";
+    if (signinPassword) signinPassword.type = type;
+  });
+}
